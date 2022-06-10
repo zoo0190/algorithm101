@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+SELECT date_format(DATETIME, '%k') AS HOUR, COUNT(date_format(DATETIME, '%k')) AS COUNT
+FROM ANIMAL_OUTS
+GROUP BY HOUR
+HAVING(HOUR > 8) AND (HOUR < 20)
+ORDER BY HOUR * 1;
