@@ -1,6 +1,6 @@
 # [level 2] 땅따먹기 - 12913 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12913) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12913) 
 
 ### 성능 요약
 
