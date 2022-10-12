@@ -1,6 +1,6 @@
 # [level 1] 짝수와 홀수 - 12937 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12937) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12937) 
 
 ### 성능 요약
 
