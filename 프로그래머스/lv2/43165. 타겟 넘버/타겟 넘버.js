@@ -1,38 +1,15 @@
 function solution(numbers, target) {
-  const arr = [];
-  const arr2 = [];
-
-  for (let i = 0; i <= numbers.length; i++) {
-    const val = combination(numbers, i);
-    !val.length
-      ? arr.push(0)
-      : val.forEach((item) => {
-          arr.push(item.reduce((acc, cur) => acc + cur, 0));
-        });
-
-    const val2 = combination(numbers, numbers.length - i).reverse();
-    !val2.length
-      ? arr2.push(0)
-      : val2.forEach((item) => {
-          arr2.push(item.reduce((acc, cur) => acc - cur, 0));
-        });
+  let answer = 0;
+  getAnswer(0,0);
+  function getAnswer(x,value) {
+      if(x<numbers.length){
+          getAnswer(x+1,value + numbers[x]);
+          getAnswer(x+1,value - numbers[x]);
+      } else{
+          if(value === target){
+              answer++
+          }
+      }
   }
-
-  return arr.map((item, i) => item + arr2[i]).filter((item) => item === target)
-    .length;
+  return answer;
 }
-
-const combination = (arr, num) => {
-  const result = [];
-  if (num === 1) return arr.map((item) => [item]);
-
-  arr.forEach((val, idx, origin) => {
-    const rest = origin.slice(idx + 1);
-    const recurResult = combination(rest, num - 1);
-    const attach = recurResult.map((recurVal) => [val, ...recurVal]);
-
-    result.push(...attach);
-  });
-
-  return result;
-};
