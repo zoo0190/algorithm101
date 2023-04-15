@@ -1,0 +1,12 @@
+-- 코드를 입력하세요
+SELECT 
+	CONCAT('/home/grep/src/', ugf.BOARD_ID, '/', ugf.FILE_ID, ugf.FILE_NAME, ugf.FILE_EXT) FILE_PATH
+FROM USED_GOODS_FILE ugf
+WHERE ugf.BOARD_ID = (
+	SELECT 
+    	BOARD_ID 
+    FROM USED_GOODS_BOARD
+    ORDER BY VIEWS DESC
+    LIMIT 1
+)
+ORDER BY ugf.FILE_ID DESC;
