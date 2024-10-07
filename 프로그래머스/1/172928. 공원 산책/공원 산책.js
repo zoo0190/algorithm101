@@ -7,12 +7,6 @@ function solution(park, routes) {
         }
         return ac
     }, [])
-    
-    const routesArr = routes.reduce((ac, cr) => {
-        const [direction, distance] = cr.split(' ') 
-        ac.push(...Array(+distance).fill(direction))
-        return ac
-    }, [])
 
     const recur = (point, routesArr) => {
         if(!routesArr.length) {
